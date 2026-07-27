@@ -1161,15 +1161,6 @@ main#page-home{ display:block; }
 </main>
 
 <!-- ================= CASE STUDIES INDEX ================= -->
-<main id="page-casestudies">
-<header class="page-head">
-  <div class="wrap">
-    <p class="tag on-light">Case Studies</p>
-    <h1>Deeper looks at the work</h1>
-    <p class="page-sub">The resume bullets, expanded — the problem, the approach, and what actually happened.</p>
-  </div>
-</header>
-
 <section class="cs-index-section">
   <div class="wrap">
     <article class="cs-card tick-frame">
@@ -1189,6 +1180,20 @@ main#page-home{ display:block; }
     </article>
     <article class="cs-card tick-frame">
       <div class="cs-card-meta">
+        <p class="cs-card-org">College of Coastal Georgia · Element451 Bolt Agent Platform</p>
+        <p class="cs-card-date">2025</p>
+      </div>
+      <h2>AI-Driven Admissions Scoring System</h2>
+      <p>Built the full application-through-decision workflow for the Nursing,
+      Radiology, and Honors programs — checklist logic, an AI-driven analysis layer
+      that scores completed applications against program requirements, and
+      post-acceptance guidance so students know what to expect before day one. What
+      used to take departments an extra two months after the application window
+      closed now takes about a week.</p>
+      <a href="#" data-page="case-study-nursing-admissions" class="inline-link">Read the full case study →</a>
+    </article>
+    <article class="cs-card tick-frame">
+      <div class="cs-card-meta">
         <p class="cs-card-org">Freelance · AWS Serverless · Amazon Connect</p>
         <p class="cs-card-date">2024</p>
       </div>
@@ -1205,7 +1210,6 @@ main#page-home{ display:block; }
     <p class="cs-more-note">More write-ups coming as projects wrap up.</p>
   </div>
 </section>
-</main>
 
 <!-- ================= CASE STUDY: POST-ADMIT CHECKLIST ================= -->
 <main id="page-case-study-post-admit">
@@ -1343,6 +1347,117 @@ main#page-home{ display:block; }
 </section>
 </main>
 
+<!-- ================= CASE STUDY: NURSING/RADIOLOGY/HONORS ADMISSIONS ================= -->
+<main id="page-case-study-nursing-admissions">
+<header class="page-head cs-head">
+  <div class="wrap">
+    <a href="#" data-page="casestudies" class="cs-back">← All case studies</a>
+    <p class="tag on-light">Case Study</p>
+    <h1>AI-Driven Admissions Scoring System</h1>
+    <p class="page-sub">College of Coastal Georgia · Element451 Bolt Agent Platform · Nursing, Radiology &amp; Honors Programs</p>
+  </div>
+</header>
+
+<section class="cs-body">
+  <div class="wrap cs-wrap">
+
+    <article class="cs-section">
+      <p class="cs-eyebrow">01 · Overview</p>
+      <p>Nursing, Radiology, and the Honors Program each run competitive,
+      requirement-heavy application cycles — the kind where every applicant
+      needs to be checked against a specific set of prerequisites before a
+      program can make a decision. I built the full workflow for all three:
+      checklist logic to track requirements, an AI-driven analysis layer on
+      Element451's Bolt Agent platform that scores each completed application
+      against program-specific requirements, and a post-acceptance layer that
+      gives admitted students the information they need to be ready for day
+      one in their program.</p>
+    </article>
+
+    <article class="cs-section">
+      <p class="cs-eyebrow">02 · The Problem</p>
+      <p>Nursing and Radiology in particular have hard requirements — specific
+      prerequisite courses, minimum grades, documentation — that someone
+      previously had to check by hand, application by application, after the
+      window closed. That review process alone was adding roughly two extra
+      months on top of the application period before either department had a
+      finalized applicant pool to make decisions from. Admitted students also
+      often didn't get clear, upfront information about what they needed to do
+      to be ready for their first day, since that guidance depended on the same
+      manual process finishing first. Honors faced a related but different
+      problem: a manual, less structured review process that made it harder to
+      move quickly on decisions as application volume grew.</p>
+    </article>
+
+    <article class="cs-section">
+      <p class="cs-eyebrow">03 · My Role</p>
+      <ul class="cs-list">
+        <li>Designed checklist logic to track application requirements per program (Nursing, Radiology, Honors).</li>
+        <li>Built an AI-driven analysis layer on Element451's Bolt Agent platform that evaluates each completed application against program-specific requirements.</li>
+        <li>Configured scoring output as not qualified, qualified, or highly qualified, giving staff a fast, consistent first-pass read before manual review.</li>
+        <li>Built the post-acceptance information flow so admitted Nursing and Radiology students receive the requirements and preparation details they need ahead of their first day.</li>
+        <li>Worked with each department to define what their specific requirements actually meant in checklist and scoring logic.</li>
+      </ul>
+    </article>
+
+    <article class="cs-section">
+      <p class="cs-eyebrow">04 · What I Built</p>
+      <p>The core of the system is a scoring layer that reads a completed
+      application against a program's defined requirements and returns a
+      consistent first-pass rating — not qualified, qualified, or highly
+      qualified. Staff make the final decision on every application; the score
+      gives them a fast, consistent starting point instead of a cold read on
+      every file. That alone removed most of the manual requirement-checking
+      that had been adding months to the process. Layered on top of that, I
+      built out post-acceptance guidance specifically for Nursing and Radiology,
+      so once a student is admitted they immediately get the program-specific
+      requirements and preparation information they need to be ready for day
+      one, rather than finding out piecemeal. The one fully automated exception
+      is the Windward Scholar pathway — dual-enrollment students continuing to
+      CCGA after high school — where the decision itself is automated based on
+      their existing dual-enrollment record.</p>
+    </article>
+
+    <article class="cs-section">
+      <p class="cs-eyebrow">05 · Results</p>
+      <p>These are department-reported outcomes, not independently audited
+      figures:</p>
+      <ul class="cs-list">
+        <li>Nursing and Radiology went from roughly two extra months of manual post-window review to about a week to finalize their applicant pool.</li>
+        <li>Both departments reported being able to make admissions decisions noticeably faster as a direct result.</li>
+        <li>Admitted Nursing and Radiology students now receive clear, upfront requirements and preparation information instead of learning what they need piecemeal after acceptance — helping them arrive better prepared for day one.</li>
+        <li>The Honors Program saw an increase in applications received, alongside an easier, faster application and decision process for staff.</li>
+      </ul>
+    </article>
+
+    <article class="cs-section">
+      <p class="cs-eyebrow">06 · What I Learned</p>
+      <p>The time savings here came less from "AI scoring" as a novelty and more
+      from removing a specific, well-defined bottleneck: manual requirement
+      checking that had to happen serially, application by application, before
+      anything else could move. Once that first-pass read became consistent and
+      fast, everything downstream — decisions, post-acceptance communication,
+      staff bandwidth — moved faster too. It also reinforced that keeping human
+      review in the loop wasn't a limitation on the automation; it's what made
+      departments comfortable trusting a faster process in the first place.</p>
+    </article>
+
+    <article class="cs-section">
+      <p class="cs-eyebrow">07 · Skills Demonstrated</p>
+      <div class="chips cs-chips">
+        <span class="chip">CRM Configuration (Element451 Bolt Agent Platform)</span>
+        <span class="chip">AI-Assisted Decision Support</span>
+        <span class="chip">Checklist &amp; Requirements Logic</span>
+        <span class="chip">Cross-Department Requirements Gathering</span>
+        <span class="chip">Post-Acceptance Student Communication Design</span>
+        <span class="chip">Process Automation</span>
+      </div>
+    </article>
+
+  </div>
+</section>
+</main>
+   
 <!-- ================= CASE STUDY: SERVICE WORKFLOW AUTOMATION ================= -->
 <main id="page-case-study-service-workflow">
 <header class="page-head cs-head">
