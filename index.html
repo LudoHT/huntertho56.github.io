@@ -1166,6 +1166,21 @@ main#page-home{ display:block; }
   <div class="wrap">
     <article class="cs-card tick-frame">
       <div class="cs-card-meta">
+        <p class="cs-card-org">College of Coastal Georgia · Microsoft 365 Copilot · SharePoint · Python</p>
+        <p class="cs-card-date">2026</p>
+      </div>
+      <h2>Policy Navigator — an internal AI assistant for institutional policy</h2>
+      <p>A grounded question-answering assistant that reads the College's own
+      policy corpus and returns a direct answer, the source document it came from,
+      and the office responsible for it. The design constraint that shaped
+      everything: in a policy context, a confident wrong answer costs more than no
+      answer — so grounding is enforced at the platform level, every answer carries
+      provenance, and absent information is named rather than filled. Most of the
+      work was in the corpus, not the model.</p>
+      <a href="#" data-page="case-study-policy-navigator" class="inline-link">Read the full case study →</a>
+    </article>
+    <article class="cs-card tick-frame">
+      <div class="cs-card-meta">
         <p class="cs-card-org">College of Coastal Georgia · Element451</p>
         <p class="cs-card-date">2025</p>
       </div>
@@ -1588,6 +1603,160 @@ main#page-home{ display:block; }
         <span class="chip">Email Workflow Automation</span>
         <span class="chip">Small Business Process Automation</span>
         <span class="chip">Reusable System Design</span>
+      </div>
+    </article>
+
+  </div>
+</section>
+</main>
+
+<!-- ================= CASE STUDY: POLICY NAVIGATOR ================= -->
+<main id="page-case-study-policy-navigator">
+<header class="page-head cs-head">
+  <div class="wrap">
+    <a href="#" data-page="casestudies" class="cs-back">← All case studies</a>
+    <p class="tag on-light">Case Study</p>
+    <h1>Policy Navigator — an internal AI assistant for institutional policy</h1>
+    <p class="page-sub">College of Coastal Georgia · Internal tool for staff and faculty · Microsoft 365 Copilot Agent Builder · SharePoint · Python</p>
+  </div>
+</header>
+
+<section class="cs-body">
+  <div class="wrap cs-wrap">
+
+    <article class="cs-section">
+      <p class="cs-eyebrow">01 · Role &amp; Context</p>
+      <p>I designed, built, and did the source architecture for Policy Navigator —
+      an internal tool for staff and faculty at the College of Coastal Georgia,
+      built on Microsoft 365 Copilot Agent Builder, SharePoint, and Python.</p>
+    </article>
+
+    <article class="cs-section">
+      <p class="cs-eyebrow">02 · The Problem</p>
+      <p>The College publishes roughly eighty policies covering everything from
+      annual leave to procurement thresholds to acceptable use of technology. All of
+      it is available. Almost none of it is findable.</p>
+      <p>Staff generally know a rule exists without knowing which document contains
+      it, which office owns it, or whether the version they remember is still
+      current. The predictable result is that questions with published answers land
+      in the inboxes of HR and Business Affairs, and the people best positioned to
+      handle judgment calls spend their time on lookups instead.</p>
+      <p>The gap wasn't publication. It was retrieval.</p>
+    </article>
+
+    <article class="cs-section">
+      <p class="cs-eyebrow">03 · What I Built</p>
+      <p>A grounded question-answering assistant that reads the College's own policy
+      corpus and returns a direct answer, the source document it came from, and the
+      office responsible for it.</p>
+      <p>The design constraint that shaped everything: <strong>in a policy context, a
+      confident wrong answer costs more than no answer.</strong> A tool that is
+      helpful 90% of the time and quietly invents the other 10% is worse than
+      useless — it's a liability, because users can't tell the difference.</p>
+      <p>Three decisions followed from that:</p>
+      <ul class="cs-list">
+        <li><strong>Grounding is enforced at the platform level, not by
+        instruction.</strong> The agent is configured to answer only from attached
+        sources. Asking a model nicely to avoid general knowledge is not a control;
+        restricting what it can retrieve is.</li>
+        <li><strong>Every answer carries provenance.</strong> Policy title, section,
+        and revision date where the source shows them — never inferred. Users can
+        verify and escalate rather than take the tool's word for it.</li>
+        <li><strong>Absent information is named, not filled.</strong> The assistant
+        is explicitly instructed to state what it doesn't have and stop, rather than
+        reaching for something plausible.</li>
+      </ul>
+    </article>
+
+    <article class="cs-section">
+      <p class="cs-eyebrow">04 · The Interesting Problem: Scoping</p>
+      <p>College policy sits underneath system-level policy from the University
+      System of Georgia — three manuals, one of which is 230 separate documents
+      behind a platform with no automated export.</p>
+      <p>Including it fully would have delayed launch by weeks for material that is
+      secondary to most questions. Excluding it created a subtler risk: College
+      policies <em>cite</em> system policy constantly, so the assistant would
+      encounter those references inside documents it did have. The danger wasn't a
+      gap in coverage. It was that a language model, seeing a familiar-sounding
+      requirement, would fill the gap convincingly from general knowledge.</p>
+      <p>I scoped to College policy only and handled the seam explicitly. When a
+      source cites a system requirement, the assistant names the reference exactly
+      as written and describes nothing about it, directing the user to the
+      responsible office. The boundary is stated in the assistant's operating
+      instructions, reinforced in its prohibited behaviors, and disclosed in the
+      closing line of every substantive answer.</p>
+      <p>I also scoped and prioritized a 35-document subset of the system manual
+      covering the domains staff actually ask about — purchasing, travel,
+      compensation, accounts payable — so the decision is reversible once usage data
+      shows whether it's needed.</p>
+    </article>
+
+    <article class="cs-section">
+      <p class="cs-eyebrow">05 · Source Engineering</p>
+      <p>Most of the work was not in the assistant. It was in the corpus.</p>
+      <p>The policy repository served content as a single dynamic page containing
+      every policy at once — fine for humans, poor for retrieval, since finding one
+      paragraph inside one enormous document is a much harder problem than picking
+      the right document from eighty. I wrote a Python tool to split the corpus into
+      one file per policy, preserving title, responsible office, and effective and
+      revision dates as structured headers, and producing an inventory of the full
+      set.</p>
+      <p>That inventory turned out to matter more than the split. Sorting by
+      revision date surfaced a set of documents that hadn't been touched in over a
+      decade, several containing unfinished drafting — placeholder text, truncated
+      definitions, empty required sections — and a number of internal links pointing
+      at a retired content management system.</p>
+      <p>An AI assistant surfaces that material faithfully and at volume, where a
+      rarely-visited repository does not. I routed the findings to the policy owners
+      before launch and added an instruction requiring the assistant to flag
+      incomplete source text rather than repeat it as policy.</p>
+      <p>A second tool maps cross-references between policies and reports which cited
+      documents are missing from the knowledge base, so the corpus can be closed
+      iteratively rather than guessed at.</p>
+    </article>
+
+    <article class="cs-section">
+      <p class="cs-eyebrow">06 · Outcome</p>
+      <p><em>Pilot in progress — to be updated with usage volume, question
+      categories, and accuracy against the known-answer test set.</em></p>
+      <p>Evaluation is a fixed set of questions with verified answers, drawn from the
+      domains that generate real traffic rather than edge cases. Failures drive
+      instruction revisions. The set gets rerun after each change, which means "did
+      that fix it" is a measurable question rather than an impression.</p>
+    </article>
+
+    <article class="cs-section">
+      <p class="cs-eyebrow">07 · What I'd Carry Forward</p>
+      <ul class="cs-list">
+        <li><strong>The corpus is the product.</strong> Model capability was never
+        the limiting factor. Document structure, freshness, and coverage were — and
+        that's where the effort belonged.</li>
+        <li><strong>Scope down to ship.</strong> The comprehensive version of this
+        tool was achievable and would not have launched. A narrower one that works,
+        with a documented path to expand, was the better trade.</li>
+        <li><strong>Design the failure mode first.</strong> Deciding what the
+        assistant does when it <em>doesn't</em> know shaped the instructions more
+        than any decision about what it does when it does.</li>
+        <li><strong>Tools like this need an owner, not just a builder.</strong>
+        Documents change, and an assistant grounded in a stale corpus degrades
+        silently. Naming who maintains it was part of the handoff, not an
+        afterthought.</li>
+      </ul>
+    </article>
+
+    <article class="cs-section">
+      <p class="cs-eyebrow">08 · Skills Demonstrated</p>
+      <div class="chips cs-chips">
+        <span class="chip">Microsoft 365 Copilot Agent Builder</span>
+        <span class="chip">Grounded / RAG System Design</span>
+        <span class="chip">SharePoint</span>
+        <span class="chip">Python</span>
+        <span class="chip">Corpus &amp; Source Engineering</span>
+        <span class="chip">Prompt &amp; Guardrail Design</span>
+        <span class="chip">Evaluation &amp; Known-Answer Testing</span>
+        <span class="chip">Scope Definition</span>
+        <span class="chip">AI Safety &amp; Provenance</span>
+        <span class="chip">Stakeholder Handoff &amp; Ownership</span>
       </div>
     </article>
 
