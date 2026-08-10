@@ -394,6 +394,15 @@ hr.rule{
   background:var(--paper-3);
 }
 
+/* ---- recognition ---- */
+.recognition-section{ background:var(--paper); }
+.recognition-grid{ display:grid; grid-template-columns:1fr 1fr; gap:18px; margin-top:24px; }
+.recognition-card{ background:var(--paper-3); padding:26px 24px 28px; }
+.recognition-meta{ font-family:var(--f-mono); font-size:12px; color:var(--amber-dim); margin-bottom:10px; }
+.recognition-card h3{ font-size:19px; margin-bottom:10px; }
+.recognition-card p{ color:var(--ash); font-size:15px; }
+@media (max-width: 700px){ .recognition-grid{ grid-template-columns:1fr; } }
+
 /* ---- projects ---- */
 .proj-grid{ display:grid; grid-template-columns:1fr 1fr; gap:18px; margin-top:24px; }
 .proj-card{ background:var(--paper-3); padding:26px 24px; }
@@ -906,6 +915,24 @@ main#page-home{ display:block; }
   </div>
 </section>
 
+<section class="recognition-section">
+  <div class="wrap">
+    <p class="tag on-light">Recognition</p>
+    <div class="recognition-grid">
+      <article class="recognition-card tick-frame">
+        <p class="recognition-meta">2026 · College of Coastal Georgia</p>
+        <h3>Innovator Award</h3>
+        <p>Recognized for finding places where technology could improve a process and then building the solution. The work included Element451 workflows, CCGA Marketplace, orientation check-in, AI chatbots and knowledge bases, student-support handoffs, the internal Policy Navigator, Dynamic Forms, and training resources for students, faculty, and staff.</p>
+      </article>
+      <article class="recognition-card tick-frame">
+        <p class="recognition-meta">2026 · College of Coastal Georgia</p>
+        <h3>Coastal Collaboration Award</h3>
+        <p>Received as part of the cross-functional team recognized for the partnership and work behind bringing Element451 to life at CCGA, including the workflows, AI support tools, knowledge base, and routing that help students get to the right information or person when they need it.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
 <section class="projects-section">
   <div class="wrap">
     <p class="tag on-light">Selected projects</p>
@@ -977,6 +1004,8 @@ main#page-home{ display:block; }
   <div class="wrap">
     <p class="tag on-light">Licenses &amp; certifications</p>
     <ul class="cert-list">
+      <li><div><h4>AWS Certified AI Practitioner</h4><p class="cert-issuer">Amazon Web Services (AWS) · Issued Aug 2026</p></div></li>
+      <li><div><h4>AWS Certified Cloud Practitioner</h4><p class="cert-issuer">Amazon Web Services (AWS) · Issued Aug 2026</p></div></li>
       <li><div><h4>Google AI Professional Certificate</h4><p class="cert-issuer">Google</p></div></li>
       <li><div><h4>Make Agentic AI Work for You</h4><p class="cert-issuer">IBM · Issued Apr 2026</p></div></li>
       <li><div><h4>Retrieval-Augmented Generation for Enhanced AI Outputs</h4><p class="cert-issuer">IBM · Issued Apr 2026</p></div></li>
@@ -1166,17 +1195,17 @@ main#page-home{ display:block; }
   <div class="wrap">
     <article class="cs-card tick-frame">
       <div class="cs-card-meta">
-        <p class="cs-card-org">College of Coastal Georgia · Microsoft 365 Copilot · SharePoint · Python</p>
+        <p class="cs-card-org">College of Coastal Georgia · Microsoft 365 Copilot · SharePoint · Python · SQLite</p>
         <p class="cs-card-date">2026</p>
       </div>
       <h2>Policy Navigator — an internal AI assistant for institutional policy</h2>
-      <p>A grounded question-answering assistant that reads the College's own
-      policy corpus and returns a direct answer, the source document it came from,
-      and the office responsible for it. The design constraint that shaped
-      everything: in a policy context, a confident wrong answer costs more than no
-      answer — so grounding is enforced at the platform level, every answer carries
-      provenance, and absent information is named rather than filled. Most of the
-      work was in the corpus, not the model.</p>
+      <p>A grounded question-answering assistant backed by a policy source pipeline I
+      built for CCGA and USG content. Along with the Copilot agent, I built Python
+      tooling to restructure College policies and a crawler for public USG PolicyStat
+      pages that discovers policies, extracts their content and metadata, normalizes
+      them into structured JSON/JSONL, and publishes cleaner HTML for AI retrieval.
+      Most of the work was in making the source material reliable, searchable, and
+      maintainable — not just configuring the model.</p>
       <a href="#" data-page="case-study-policy-navigator" class="inline-link">Read the full case study →</a>
     </article>
     <article class="cs-card tick-frame">
@@ -1346,7 +1375,7 @@ main#page-home{ display:block; }
     </article>
 
     <article class="cs-section">
-      <p class="cs-eyebrow">08 · Skills Demonstrated</p>
+      <p class="cs-eyebrow">09 · Skills Demonstrated</p>
       <div class="chips cs-chips">
         <span class="chip">CRM Configuration (Element451)</span>
         <span class="chip">Conditional Logic &amp; Business Rules</span>
@@ -1617,7 +1646,7 @@ main#page-home{ display:block; }
     <a href="#" data-page="casestudies" class="cs-back">← All case studies</a>
     <p class="tag on-light">Case Study</p>
     <h1>Policy Navigator — an internal AI assistant for institutional policy</h1>
-    <p class="page-sub">College of Coastal Georgia · Internal tool for staff and faculty · Microsoft 365 Copilot Agent Builder · SharePoint · Python</p>
+    <p class="page-sub">College of Coastal Georgia · Internal tool for staff and faculty · Microsoft 365 Copilot Agent Builder · SharePoint · Python · SQLite</p>
   </div>
 </header>
 
@@ -1716,7 +1745,36 @@ main#page-home{ display:block; }
     </article>
 
     <article class="cs-section">
-      <p class="cs-eyebrow">06 · Outcome</p>
+      <p class="cs-eyebrow">06 · USG Policy Crawler &amp; Publishing Layer</p>
+      <p>USG policy created a different problem. A large portion of the system-level
+      material lives in PolicyStat pages that are public to read but aren't packaged
+      in a way that works well as a controlled AI knowledge source. Rather than rely
+      on Copilot to interpret that site directly, I built a Python crawler and
+      publishing pipeline around it.</p>
+      <p>The crawler starts with discovery, collects approved policy links and stable
+      PolicyStat IDs, then fetches each policy and extracts the parts that actually
+      matter: policy number, title, status, effective and revision dates, owner,
+      policy area, sections, body text, and source references. I preserve the raw HTML
+      as well, then write normalized policy records to JSON and smaller JSONL chunks
+      that can be used for search or AI ingestion.</p>
+      <p>SQLite keeps crawl state and history, and each run produces a report showing
+      what was discovered, attempted, succeeded, or failed. The first full HR pass
+      discovered 83 policies, which gave me a real set to validate the parser and
+      metadata handling against instead of testing on a couple of hand-picked pages.</p>
+      <p>The last step is a static publishing layer. Each normalized USG policy becomes
+      its own clean HTML page on a CCGA-controlled site, with navigation and search.
+      That gives the AI a much simpler retrieval target and also gives us a way to
+      test every layer independently: USG source → crawler → normalized data →
+      published HTML → Copilot retrieval.</p>
+      <p>The next iteration is an incremental sync instead of a full recrawl: compare
+      stable policy IDs, revision metadata, and content hashes; fetch only new or
+      changed policies; preserve version history; and flag removed or changed content
+      for review before publishing. That turns the crawler from a one-time scraper
+      into a maintainable policy synchronization service.</p>
+    </article>
+
+    <article class="cs-section">
+      <p class="cs-eyebrow">07 · Outcome</p>
       <p><em>Pilot in progress — to be updated with usage volume, question
       categories, and accuracy against the known-answer test set.</em></p>
       <p>Evaluation is a fixed set of questions with verified answers, drawn from the
@@ -1726,7 +1784,7 @@ main#page-home{ display:block; }
     </article>
 
     <article class="cs-section">
-      <p class="cs-eyebrow">07 · What I'd Carry Forward</p>
+      <p class="cs-eyebrow">08 · What I'd Carry Forward</p>
       <ul class="cs-list">
         <li><strong>The corpus is the product.</strong> Model capability was never
         the limiting factor. Document structure, freshness, and coverage were — and
@@ -1745,12 +1803,17 @@ main#page-home{ display:block; }
     </article>
 
     <article class="cs-section">
-      <p class="cs-eyebrow">08 · Skills Demonstrated</p>
+      <p class="cs-eyebrow">09 · Skills Demonstrated</p>
       <div class="chips cs-chips">
         <span class="chip">Microsoft 365 Copilot Agent Builder</span>
         <span class="chip">Grounded / RAG System Design</span>
         <span class="chip">SharePoint</span>
         <span class="chip">Python</span>
+        <span class="chip">Web Crawling &amp; Parsing</span>
+        <span class="chip">httpx · BeautifulSoup · lxml</span>
+        <span class="chip">SQLite</span>
+        <span class="chip">JSON / JSONL</span>
+        <span class="chip">Static Site Generation</span>
         <span class="chip">Corpus &amp; Source Engineering</span>
         <span class="chip">Prompt &amp; Guardrail Design</span>
         <span class="chip">Evaluation &amp; Known-Answer Testing</span>
