@@ -647,6 +647,24 @@ a.contact-value:hover{ color:var(--amber-dim); }
 }
 
 .cs-chips{ margin-top:4px; }
+
+/* ---- case study impact metrics ---- */
+.metric-grid{
+  display:grid; grid-template-columns:repeat(3, 1fr); gap:14px; margin:22px 0 4px;
+}
+.metric-card{
+  background:var(--paper-3); border:1px solid var(--line-light); padding:20px 18px;
+}
+.metric-value{
+  font-family:var(--f-display); font-weight:700; font-size:clamp(1.7rem, 4vw, 2.3rem);
+  line-height:1; color:var(--ink); margin-bottom:8px;
+}
+.metric-label{
+  font-family:var(--f-mono); font-size:11.5px; line-height:1.45; letter-spacing:0.03em;
+  color:var(--ash); text-transform:uppercase;
+}
+@media (max-width:700px){ .metric-grid{ grid-template-columns:1fr; } }
+
 .chips{ display:flex; flex-wrap:wrap; gap:8px; }
 .chip{
   font-family:var(--f-mono); font-size:12.5px;
@@ -747,9 +765,10 @@ main#page-home{ display:block; }
       </article>
       <article class="cap-card tick-frame">
         <p class="cap-num">AI-Powered Support</p>
-        <p>Assistants that handle student interactions across phone, SMS, email, and
-        chat, with handoff to a human when a conversation needs one, backed by a
-        knowledge base that keeps answers consistent.</p>
+        <p>Built and operate an Element451 Bolt AI support agent, including its knowledge base,
+        routing, verification, and human-handoff architecture. In its first year it handled
+        7,856 conversations and saved 117,585 human minutes — with 3,976 conversations
+        happening after normal business hours. <a href="#" data-page="case-study-salty" class="inline-link">See the case study →</a></p>
       </article>
       <article class="cap-card tick-frame">
         <p class="cap-num">Nursing Applications &amp; Post-Admit</p>
@@ -818,17 +837,14 @@ main#page-home{ display:block; }
     <article class="job">
       <div class="job-meta"><p class="job-date">Dec 2024 — Present</p></div>
       <div class="job-body">
-        <h3>College of Coastal Georgia</h3>
-        <p class="job-role">Applications Integration Specialist · Brunswick, GA</p>
+        <h3>Applications Integration Specialist</h3>
+        <p class="job-role">College of Coastal Georgia · Brunswick, GA</p>
         <ul class="job-bullets">
-          <li>Build and maintain the integrations and automations connecting our higher-ed CRM, SIS, campus commerce, forms/workflow, reporting, and ITSM platforms — Element451, Ellucian Banner/Ethos, TouchNet Marketplace, Dynamic Forms, Argos, and ManageEngine.</li>
-          <li>Set up TouchNet Marketplace pages, storefront logic, and secure payment workflows so departments can take payments online without me in the loop every time.</li>
-          <li>Write the data workflows — APIs, PowerShell, SFTP — that keep systems talking to each other so people aren't re-entering the same information twice.</li>
-          <li>Turn admissions, onboarding, checklist, orientation, and student-service requirements into actual CRM/SIS logic, working closely with the teams who'll use it day to day.</li>
-          <li>Own enhancements end to end — gathering requirements, designing the workflow, building the form or config, testing it, documenting it, and rolling it out to the people who asked for it.</li>
-          <li>Configure ManageEngine request forms and approval routing so tickets land where they should and people can see where things stand.</li>
-          <li>Built and maintain AI-powered assistants in Zia Bot and Element451 AI that handle student questions across phone, SMS, email, and chat — with human handoff built in for anything they shouldn't try to answer alone.</li>
-          <li>Document the integration logic, data standards, and troubleshooting steps so the knowledge doesn't live only in my head.</li>
+          <li>Design and build API- and SFTP-based data workflows connecting CRM, SIS, and campus-commerce platforms, translating cross-departmental business requirements into working technical logic.</li>
+          <li>Own and maintain an AI-powered chat assistant used by students, applicants, and staff; build and refine its knowledge base for accuracy, configure handoff logic to live staff, and diagnose and fix issues including incorrect responses and failed escalations.</li>
+          <li>Led a cross-functional rebuild of a manual, static tracking process into a dynamic, condition-based system spanning eight departments, aligning stakeholders with different technical fluency around a shared data model. Early results include an estimated 18% increase in one downstream engagement metric and 22% in another.</li>
+          <li>Built an internal AI Policy Navigator for staff and faculty, plus a Python crawler and publishing pipeline that collects public USG PolicyStat content, normalizes policy text and metadata into structured sources, and publishes clean HTML for Copilot retrieval.</li>
+          <li>Own technical delivery end-to-end: requirements gathering, workflow design, configuration, testing, and documentation.</li>
         </ul>
       </div>
     </article>
@@ -837,14 +853,13 @@ main#page-home{ display:block; }
     <article class="job">
       <div class="job-meta"><p class="job-date">Jun 2024 — Present</p></div>
       <div class="job-body">
-        <h3>Freelance Systems, Web &amp; Automation Consultant</h3>
-        <p class="job-role">Brunswick, GA</p>
+        <h3>Freelance Systems &amp; Automation Consultant</h3>
+        <p class="job-role">Self-employed · Remote</p>
         <ul class="job-bullets">
-          <li>Build workflow automation systems for small businesses that are still running on manual intake and tracking, and replace it with something cloud-based that actually scales.</li>
-          <li>Build real production websites — not just the front end, but the intake forms and backend routing logic behind them.</li>
-          <li>Design serverless workflows on AWS S3, Lambda, and API Gateway so requests get processed automatically instead of sitting in someone's inbox.</li>
-          <li>Sit down with business owners, figure out what's actually slowing them down, and turn that into something automated.</li>
-          <li>Prototype AI-assisted and agentic workflows with Claude and similar tools for routing tasks, processing data, and making basic decisions on their own.</li>
+          <li>Design and build workflow automation and web platforms for small-business clients, replacing manual intake, tracking, and operational processes with cloud-based systems.</li>
+          <li>Prototype agentic workflows using Claude for task routing and decision-based automation, testing where an automated process holds up in real use versus where it needs a human in the loop.</li>
+          <li>Build serverless automation using AWS Lambda, S3, and API Gateway to replace manual backend processing with real-time data flows.</li>
+          <li>Gather requirements directly from business owners and translate ambiguous operational problems into scoped, working technical systems.</li>
         </ul>
       </div>
     </article>
@@ -853,11 +868,10 @@ main#page-home{ display:block; }
     <article class="job">
       <div class="job-meta"><p class="job-date">Nov 2022 — Apr 2023</p></div>
       <div class="job-body">
-        <h3>Karate's Plumbing Inc.</h3>
-        <p class="job-role">Business Operations Intern · Jesup, GA</p>
+        <h3>Business Operations Intern</h3>
+        <p class="job-role">Karate's Plumbing Inc · Jesup, GA</p>
         <ul class="job-bullets">
-          <li>Connected service request forms to backend workflows so intake and processing didn't have to be done by hand.</li>
-          <li>Helped with budgeting and looked for ways to tighten up day-to-day operations.</li>
+          <li>Integrated service-request forms with backend workflows to streamline intake and processing; supported budgeting and process-improvement efforts.</li>
         </ul>
       </div>
     </article>
@@ -937,6 +951,12 @@ main#page-home{ display:block; }
   <div class="wrap">
     <p class="tag on-light">Selected projects</p>
     <div class="proj-grid">
+      <article class="proj-card tick-frame proj-card-halo">
+        <p class="proj-date">2025 — Present</p>
+        <h3>Salty — Element451 Bolt AI Support Agent</h3>
+        <p>Built the knowledge base, routing, verification, guided application-start, escalation, and human-handoff architecture behind CCGA's AI support agent across admissions, Help Desk, housing, Student Handbook, and other College topics. In its first year, it handled 7,856 conversations, saved 117,585 human minutes, served more than half of users after hours, and handed only 117 conversations to human staff.</p>
+        <a href="#" data-page="case-study-salty" class="inline-link">Read the case study →</a>
+      </article>
       <article class="proj-card tick-frame">
         <p class="proj-date">May 2024 — Nov 2024</p>
         <div class="proj-thumb"><img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAgGBgcGBQgHBwcJCQgKDBQNDAsLDBkSEw8UHRofHh0aHBwgJC4nICIsIxwcKDcpLDAxNDQ0Hyc5PTgyPC4zNDL/2wBDAQkJCQwLDBgNDRgyIRwhMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjL/wAARCACgAUQDASIAAhEBAxEB/8QAHAAAAQQDAQAAAAAAAAAAAAAAAAEEBQgCAwcG/8QAUBAAAQMCAgMIDgYIBAUFAAAAAQACAwQRBQYSITEHE0FRUnSRsRQVFyIyMzZVYXFykpPRCCM1U4GhFiQ3QlRzweE0YpTwJkVkgrJDRGODhP/EABgBAQADAQAAAAAAAAAAAAAAAAACAwQB/8QAIhEBAAICAQQDAQEAAAAAAAAAAAECAxETEiEyUQQUYTEi/9oADAMBAAIRAxEAPwDtGZMxUOV8FmxKud3jO9ZGPCkedjR6f6XKrdmvdExnM87hUkCmvdlKxxEbOK/KPpP5KS3X81yYzmmajikPYlA4wRNB1F48N3Tq9QC8jhMFQync8YbVTskFtJjDYt4thVmKsWnury2msdjB9XK8EGJgvxG1ljHUysZomNrte0lSxpKnSJGATW4LxvWqooKyVoEeDVERBvdsTzfpV/DRRzXRL3zvcXXLfQHLH6/lO95SHanEvN9X8F3yS9qcS831fwXfJOGhzX9I68/Ld7yLz8p3vKXbglYYtI09U199bOxnn81kcCqhsiqjr2div2cacOM5siGvPyne8j6/lO95TbsBqBezKk2/6R/ySNwKpLATFVAnaOxX6k4aHNk9IX6/lO95H1/Kd7ymRgdVoXMNUDyexX/JL2iqNX1dV/pXpw0Oa6FLpmi5e73ljvsn3julSWIYXUUkG+Ojn0L63PgcwD8SopUZaxWdQvxWm0bk5phLUTNia55c42GsqQlwqpjf3rtJh8Fzn6N/wKndzfJMedMQq6d9dJSbxGHhzGBxNzZdGduBwON3ZgqCfTCPmrMd6RXuryVvNuzjJw2rDSSW2G20w+aZ3PKd7y7j3Aabz9P8EfNHcApvP0/wR81PkxIdGVw655TveKLnlO94ruPcBpvP0/wR81nFuDwQP0o8fmBtbXTtPWnJiOPK4Xd3Kd7xRc8t3vFd5buJMBOjmGTab/qzDrKVu4g1rdEY/JbmrE5MRx5HBbnlu94oueU73iu9jcQaHF36QSX5qxJ3D26Wl2/lva3+FYnJiOPI4Lc8p3vFF3ct3vFd7G4gBf8A4hl18dKxYv3D2mMtOYJSLfwzE5MRx5FfzLJc/WO6UrZpA4HTcfRdbsSpRQ4pVUjXl4hlcwOPDYpuxrnPa1oJcTYAC5Ky9plq7xB4aqTbvTfXdYSTyPAszRI4Q461Ntp6kUjIHYLVv0deuN1r8J2XWsUlTqvgEptt+qk1rVw0Zea6K7KmO2JhPHdIaiU2tGBrvqcU9mw2vkk0mYVUxt5LYXkdSw7U4l5vq/gu+ScNDmv6NhVSg+KaeO7lqkknkIt3tuSU+GE4iSL0FWBx7y75JwcDqQ6wiqiLXv2K/bxbE4aHNdDXn5TveR9fyne8prtFU6ZG91OjbU7sV+v8kjsCqQW6MVU651/qrxYdCcNDmuhvr+U73kt5x+873lMuwKpAGjHVO/8AyvCO0NTpAb3U2PD2K/V+ScNDmuj6OvraKoZPBK+OVhu2SN+i5p4wQu67m26pLilRDg2PyNNRJ3tPVmw03cDH8F+I8PrXHBgFRfZUW5pJ8kwqIp8MrGB7ZWA62ucwsJ9IuoZMdK13Ep48l7W1MLnoXkdz7NTcx5RpqqqmaKuEmCcuNtJ7QO+/EEH1koWdoVYxKZ89W6WQ3e+73HjJJurR7l7Gu3OsIJaL71xelVYrfHD2Vanct/ZzhH8r+qD1u9M5DehG9M5DehZoQYb0zkN6Eb0zkN6FmmGL4pTYPh09bVSiOKJpc4lP65Lz2fM40mT8EfOGRvrpO8p4iNRdxn0BPMo5moM24JDX07GtktozR8LHjaFXXMuMy5zxabEp6kRxh+9wQuPgsuNf53Ke5OzG/I+PRv7KE1DUP0J2s1gAHU8LTw/5/Wfm/wBfiz29M5DehG9M5Deha6OrhraWOoge18cjQ5rgdRBW9ZmlhvTOQ3oRvUfIb0LNCDn27GxrdzmtIaL6bNg9Kq+rRbsv7OKz+YzrVXUHYfo/fbuK83b1qwFlX/6P327ivN29asAgLIshCAXnc45qpsqYHLXzEGQC0UfC93AFNVlXFRUslRM9rI2NLi5xsAq15zzPU5rx7s0U7p8Jgc6OGIfvHhdbj2KzHTqlXkv0wkshbpldRZpqO29QX0uJy6UhcdUUh1AjiHArDxSNljD2EEEXVRJGs3gsbhMokIID9HZe1uDg/quybkmdZKyn7Q4o9zaynb9UX6i9nzCtzUjW4VYrz/JdaQi+pCzNIWLvAPqWSR3gH1IKY5h8pMT5y/rS5d8pMN5yzrSZh8pMS5y/rS5d8pMN5yzrQXHkMMMZkkDQ0bTorQK6gOySM/gntgRrCTQZyW9CBl2fQa/rI9W3vf7JxC+nqGl0Wg9oNrgLbvbOS3oSgAbAB6kGO9M5DehG9M5DehZoQYb0zkN6Eb0zkN6FmhBhvTOQ3oRvTOQ3oWaEGG9M5DehV+3fmhuYcMAAH6udnrVhFXz6QHlDhnNz1oPCYbjNbQUgip5nMY7vyAeGw+SFHxeJZ7IQgaVvjh7KtTuW/s5wj+V/VVWrfHD2Vajct/ZzhH8r+qD2KElxxrXUSPjge+Nm+PAuGg7UGzgXAt1vNVXi2KHBaGKd9FTvBmc2M2kcOD1BdpdiVY2wOGym9hcOC1VDnd8XYRpga7ttrU6T0zuYQvHVGtqxSPgleZH4HPpknY1wFuDVbatbmUtjo4JVC44natXqVndEWv2mJB4NV+D+/QshG3fC3tR3vHcK7m/FPD+uX7j2a6uGRuXcRjmazWaaR7CB7N+pdrGxQkMs0bho4OG8IOrUU5GIVlhfDZOLwwqbzud6XUjUa2k0LCJ5fG1zmlpIuWngWVxxqCbwO7L+zis/mM61V1Wi3Zf2cVn8xnWquoOw/R++3cV5u3rVgFX/AOj99u4rzdvWrAIBCEIPE7ouB5gzHhTcNweSCGF5vO+RxBcOSPQuXU+5Lm6lsIKunZYECxPDa/UFYZMquufSytY2lllBG1g4VZXJasahXbHW07lwpu5bnNrdEV8AGrVpHgWVJuVZypsVgr4a2mFTCQWvLjwcC7WMYkcHEYfU3a0mxFr+gKRp5d/hbJoOZpfuu2hSnNZGMNGvD+yOwIBVta2oDAJAw3F+GycoQqVwSO8A+pKkd4B9SCmOYfKTE+cv60uXfKTDecs60mYfKTEucv60uXfKTDecs60FzLgDWUaQvtXg835HxbMOOR11FjJpIWxBhhOlYnj1LTljIOM4JjprqrHnVEJjczeRpWBIsDrKl0xre0Jmd/x0S6LqC7SVl/tWdOKnDKieOFrK6SIsbYlv73rUU0qhRVFhdRS1Ilkr5Zm6+9dsUqgEIQgEIQgFXz6QHlDhnNz1qwar59IDyhwzm560HNIvEs9kIRF4lnshCBpW+OHsq1G5d+znCP5R61Ves8cPZVktzjNGB0OQsLp6nFaWGZkdnMfIAQbo5MvVVWmKuTW7RvsC0MLwQAX2HAt/6ZZb89UXxQj9Mst+eqL4oXdT6Nwb6UhJHfW0dXoSAyMG17tViE5/TLLXnqi+KEn6ZZa89UXxQnTPo6o9tFng6g/VrGtF5bW78nYSmtXm7DXSk0uP4c1v+aULKjzdhbZSarH8Pc3gDZQnTJuDjv3uJ7/g1kpXOdo6y82sLehb/wBMst+eqL4oR+mWWvPVF8UJqfRuPbQxs0sjWtLtIXtc7U8hpayN7H6BuDr74bFq/TLLfnui+KEfpllvz1RfFCan0bj285uy/s3rNX/qM61V5WN3WMyYLiOQaumo8Tpp5nPYQyOQEnWq5Lmpd27D9H77dxXm7etWAVf/AKP327ivN29asAgDsTDTxPTI3qDR12OkfwT47CmkT3mXR7JDv8pag1l+Jl5AhgDb6jpID8TsNKKAHSF++OzhT1ukCdJwPqWVxxoI5j8WIOlDTg21Wcdv+7oD8W0TeGn0tIW747OFPZJ44zZzrLYCCL3CCOD8W3yxhp9Dj0jdOKV1YXO7JZE0cGgbpzccaVAJHeAfUlSO8A+pBTHMPlJifOX9aXLvlJhvOWdaTMPlJiXOX9aXLvlJhvOWdaC2+ISyMqbNeQLcBTTsib7x3SnGJf4r8AmaDZ2RN967pUhhkj5DJpuJsBtUWpLCdsvqCBm+om03WkdtPCseyJvvXdKxf4bvWVig2dkTfeu6VJse/tUX6R0rbfxUQpVn2MfZPWgjuyJvvXdKOyJvvXdK1oQbRUTaQ+sdt41xzd9+38L5setdfHhBcg3fft7C+bHrQc1i8Sz2QhEXiWeyEIGlZ44eypbLWXMQzPW9g4axjpwwvs9waLD1qJrPHD2V0fcRe1mcnFxsDTuCtxTrcqssb1BtLuQZqgaHSw0rAdQLp2hYDcmzMf3aPX/1DfmrMObDIyzwxwHA4A2TepoqeoiaGNY03BDmNF1LnsjwVVyj3H81SkiOGlcRxTtUZmLc9x7K2HCvxOGFkBeGAskDjc+pWmjp44RqGu3AAOpc03aallTkVhYH2FUzW5pA4VKua02iEb4axXbhrsZkc0NNLS6je+9jWs2YjJVMNOyjo2kgknRstkdLA+mjcY2aRaL229ay7Fg1XiZb+3rWjsz90ccOnAJswgar6YTeSMxPLHAXHFrUwaSnDjeNmoC9rfNDaWCzbxM1j/fCmzSE1cSNXEps0tPcd4zWb6rfNApYNf1TSPX/AHTbmkFIO8K0J7XxiKRzQRbbqTJZc/k14PF2H6P327ivN29asAq//R++3cV5u3rVgFQvB2LTo6ti3HYUzNKx2u7x6nFBu0TyUaP+VDLsYGg6hx60uk7jHQgQNN9iNE8lLpO4x0I0ncY6ECaJ5KyYCHbLakmk7jHQsmuJdYoM0jvAPqSpHeAfUgpjmHykxLnL+tLl3ykw3nLOtJmHykxPnL+tLl3ykw3nLOtBbbEIpH1N2scRYbAmu8S/du6FLz1zKeTQc1xNuBau2sXIcgjd4l+7d0KQwxj2GTSaRqG0LLttFyHLfTVbKnS0WkaPGgh3wS6bvq3bTwJN4l+7d0KTdikTSRoO1GyTtrFyHII3eJfu3dCk2Md2pLNE6VtlvSk7axchycCpaaXf7HRts4UELvEv3buhG8S/du6FJdtYuQ5HbWLkOQRwgl0h9W7oXHN337fwvmx613QYrETbQcuF7vxvmDCzx0560HNYvEs9kIRF4lnshCBpWeOHsrpG4g0Ozm64B/V3HWub1njh7Kl8s5kxHK1d2fhrohOWFh3xmkLH0K3FEzuIVZZiNTK3zmCSPRNrELXFCIm6LdFo4mhVx7tGb/vaL/T/AN1j3ZM275p77RaVrX3j+67wXc56LHmGbgqSP+0LnW7cCMhsBdpEVTNfHqK5v3aM3/e0X+n/ALqJzFuh4/mnDBh+JPpjAHh9o4tE3HpupUw2i0ShfNWazCLiq4W0zAZQCGgEXPyW01lPsM7bbdRPyUGhadM+002rpibumAAGzXc/ktYr9OYQxNfIXODW6J2knVZRKyikdDMyWM2fG4OaeIjWE0beyOWMx+ZKwXtwhR2KRV+CysZiFBPTOkaS0PIBcFtduhZkcSXVkTidpNOw3/JRWMZgxLHnxPxGcSmJuiyzA0AfgFGItvulaa67IupcHlzgXEE6tI3KbLfJ4BWhZ8/k0YPF2H6P327ivN29asAq/wD0fvt3Febt61YBULwdiZ6VRrsyL0G5Tw7E1FTBfR3+O/FdAjHT3+sjjt6CfktrDe+kwD1IBBOiJGk8V1loHjCAuzk/ki7OT+SNF3GEaLuMIC7OT+SVpbfUEmi7jCVrbOvcIM0jvAPqSpHeAfUgpjmHykxPnL+tLl3ykw3nLOtJmHykxPnL+tLl3ykw3nLOtBbTEv8AFfgEzTzEv8V+ATNAKSwnbL6go1SWE7ZfUEEe/wAN3rKxWT/Dd6ysUApVn2MfZPWopSrPsY+yetBFIQhAo8ILkG779vYXzY9a6+PCC5Bu+/b2F82PWg5rF4lnshCIvEs9kIQNKzxw9lEfiwis8cPZQzxYWj4/lLP8jxh2zcswvBMVwSQVVJRVMsbmtdvkIcWk31a17lmVsuRVRDsIoCBqLTSXHUvFbi0bW4LiJa0XdKy9/UV0mdrzOSBCeIka+tV5JmLT3WY4iax2af0Zykf+RUP+i/sqw5iijhzLikUTGsjZVSNY1osGgONhZW7geCzQ0o9Q/cdf8lUbM/lVi/PJf/Iq34895VZ47Q0Mwx8kbXiQWIv4DvktkFDNDJpsdG4luoPiLh+YTqB0Zgibdl9C1+9229aWSaKKNhcW6I1GxBt+F1oZ2ve5yL2ozw3NP/ZYy008segex2g8LICDq9Nkrq6mPe6XekHXvaBiEB1aV7iw+rQNhhMttb7f9jvkjtVL94PXoO+SeNq4gACx7r7fqitUtZEBZrzG6+10V9XqKbNIqriMDnRuNyPRZNE6qQwX0Hl44y2yarLn8mrB4uw/R++3cV5u3rVgFX/6P327ivN29asAqF4OxaNEajwrcdhTPep7G1VJr4wD/RBusAdpS6uNyQb4LfWE29WtbNM8n80GGrjcjVxuWemeT+aNM8n80GGrjcsmX0tp2cKXTPJ/NKHXNrWQZJHeAfUlSO8A+pBTHMPlJifOX9aXLvlJhvOWdaTMPlJifOX9aXLvlJhvOWdaC4k1DFUP03FwNuArX2qg5T+lPRsSoGPaqDlP6Vup6RlNpaBcb8acIQMThcLnElz9ZvtR2qg5T+lPkIGPaqDlP6U4FMwU28AnQ2elbkIGPaqDlP6UdqoOU/pT5CBiMLhBvpP6Vwnd+FswYWOKnPWrCKvn0gPKHDObnrQc0i8Sz2QhEXiWeyEIGlZ44eyhniwis8cPZQzxYV/x/Jn+R4w7duLOD8GxBrtNgbKyxtt1FdOdGJKzQ3sg8YcOoj+q4rkfdDwrLWDGkqo6hzyQbsYCNXrK9M/dhy66UuEVeBe9gLf1XL0tNpnSVL1isRt1mGNrGm0eibbSBcqouZ/KrFueS/8AkV3Bu7llsMsaauJtyB81wjGayPEMbrqyEOEc875Gh22xJOtWYKTEztXmvExGjFCELSzBOKGq7Cr6eq0A/eZGv0TsNjeyboXHXR3bq73EntPGPQJiP6Ly2acyHM1fFVGkZTb3HoaLHXvr2lQKFGKRE7hKbzMalhJ4BWhb5PAK0LNn8mnB4uw/R++3cV5u3rVgFX/6P327ivN29asAqF4OxaRe2wrchBq/Ao/A9C2rnG6JjeccMxWhjy5TySUz4yZnMgEljf0+hdrG50jadRt0H8D0JfwK4lPmndLYwmKKpkdfUDh7RddXylVYlW5YoKjF2FlfJHeZpbokG/FwKVqTXu5W8WS34FKzw9h2LYhQTCR3gH1JUjvAPqQUxzD5SYnzl/Wly75S4bzlnWkzD5SYnzl/Wly75SYbzlnWguaNiVINiVAIQhAIQhAIQhAIQhAKvn0gPKHDObnrVg1Xz6QHlDhnNz1oOaReJZ7IQiLxLPZCEDSs8cPZSwhxaNEE/gkrPHD2U8wq++mw16OpX/H8pUfI8YabScg+6k7/AJB91TwJNtWz/fEkvcuHo1f7ste2TSLbFEWAukeHcIEV7LCeNrHAQudIOEmOymL20ri5vr/3ZANjfS2bPT+S5t3SB7/kH3Uv1nIPuqeNmtvYAXvbiPQkLTfWSbm5C7tzSA0yOAdC3U8FTVuLaankmc0XIjZpEdC1TNLJntN9RO1dF3G7dvq+4/8AbjrXLW6Y2lSu7RDw/ajFfNtV8B3yWL8MxKKMySYfUtY0XLnQkAfkrOTb7ps3oM0b99dRuagP0UxPZ/h3LPHyJmdaaJ+PEV3tWSU3aStC3yeAVoUc/k7g8XoMqZsxHKlTUT4bO2F8zQ1xcwO1fivU92TNXnKL/TtXPqONstQ1j3BrSdZOwKSqKKiZJdlWxrXbGgaVvxXKYeqN7dvm6Z1p60bs2bN9INfDo8B3hqyO7JmwPt2xhI494avFmlpNFxFY0kbBoHWmdhxKf1/1D7H490/dnziHkNrYC0bDvDdax7tGcv4yD4DV4ew4lnHC+UkRxlxGuwCfX/T7H49r3aM5fxcHwGo7tGcv4yD4DV41tHO8XbA4/ghtHO4AtgeQeGyfX/T7H49l3ac5/wAZB8BqO7RnP+Mg+A1eNFHOXFogdpDaLIFHUFxaKd5IFyLJ9b9Psfj2Xdpzn/GQfAaju0ZyOrsyD4DV47sKo1/UP1ehIaOcNLjA4NHDZPr/AKfY/DWqqZKyrmqZiDJK4vcQOEp1gk8dNjlDPM7RijnY5zuIApgdpQs8tELX91TJg/53F7jvkjuq5M89xe475KqFkWXHVr+6rkzz3F7jvkjuq5M89xe475KqFkWQWv7quTPPcXuO+SO6rkzz3F7jvkqoWRZBa/uq5M89xe475I7quTPPcXuO+SqgiyC1/dVyZ57i9x3yR3Vcmee4vcd8lVBFkFr+6rkzz3F7jvkuM7seY8KzJjVBPhNW2pjjhLXloIsb+lc2shBJxeJZ7IQiLxLPZCEDzOGDyYJmSuoJGkbxM5gvwtvdp/EEFMsMlZDJpPcGi1rld83X8ivxqi7eYfCX1dOzRqI2jXJGP3hxlv5j1BV8MTohYjVwHjV+DyUfI8YTPZlNpNO+D06knZdOLnfRc+jUoZF1r0y7TPZlOGuAkbrHCECrp9HR3xt76zZRzKVr2aXZELdV7F2tYzwCENIljkvyDey5o2lOzKa/jBbbrSOq4CHWmbp7AbalDITRtlILSO7/AE/83GtlPV1FI4up55InOFiWOtdaULrh926xTzhU/EKxfi+IyMLH11Q5jhYgyGxTNCag7sJPAK0LfJ4BWhZM/k14PF0ncfyxhWZ8VxCDFaffmRRBzBpWsbrsHckyd5sPxCub/R++3cV5u3rVgFTFpj+LZrE95eH7kmTvNp+IUdyTJ3m0/EK9uSGjWbBeNi3R8Jlzu/LYcLhuiJ796ZOSpRa8/wAcmtI/rV3JMnebD8QobuTZQb4OHOHqkK9s1wcLgghZLnXb270V9PEjcpykNlA8f/aUDcpymBYUD7fzXL2yYnFqQPLdN1wbEaJ47J129nRX08v3KMpXv2A+/wDNclG5VlMEkUMgv/8AK5e1GsITrt7Oivp4nuU5TvfsB/xXJHblOUtA/qD9n3rl7dI7wD6k67ezor6UsxmCOlxuup4hoxxzOa0cQBTJSWYfKTE+cv61GqKQQhCAQhCAQhCAQhCAQhCAStBc4AbSkXqsk5Prc1Y5FRwNLWeFNNbVCzhJ9PABxoPd7n+5szMWWRiFS/eg6ZzIrjwmAAX6dIfghdzw6gpsKw6noKSPe6enjEcbfQP6oQf/2Q==" alt="Figma mockups for the SC&amp;E Partners site"></div>
@@ -1195,6 +1215,15 @@ main#page-home{ display:block; }
   <div class="wrap">
     <article class="cs-card tick-frame">
       <div class="cs-card-meta">
+        <p class="cs-card-org">College of Coastal Georgia · Element451 Bolt AI · Conversational AI · Knowledge Architecture</p>
+        <p class="cs-card-date">2025 — Present</p>
+      </div>
+      <h2>Salty — AI support that extends the service day</h2>
+      <p>Designed, built, and operate CCGA's Element451 Bolt AI support agent — not just the chatbot, but the knowledge base, routing logic, verification flows, guided application-start workflow, escalation rules, and human handoffs behind it. The agent supports admissions and prospective-student questions, Help Desk topics, Student Handbook guidance, housing, and other College services. After one year, it had handled 7,856 conversations and saved 117,585 human minutes. 3,976 conversations happened outside the College's normal 8–5 Monday–Friday service window, and only 117 conversations were handed off to human staff.</p>
+      <a href="#" data-page="case-study-salty" class="inline-link">Read the full case study →</a>
+    </article>
+    <article class="cs-card tick-frame">
+      <div class="cs-card-meta">
         <p class="cs-card-org">College of Coastal Georgia · Microsoft 365 Copilot · SharePoint · Python · SQLite</p>
         <p class="cs-card-date">2026</p>
       </div>
@@ -1253,6 +1282,104 @@ main#page-home{ display:block; }
       <a href="#" data-page="case-study-service-workflow" class="inline-link">Read the full case study →</a>
     </article>
     <p class="cs-more-note">More write-ups coming as projects wrap up.</p>
+  </div>
+</section>
+</main>
+
+<!-- ================= CASE STUDY: SALTY / ELEMENT451 BOLT AI ================= -->
+<main id="page-case-study-salty">
+<header class="page-head cs-head">
+  <div class="wrap">
+    <a href="#" data-page="casestudies" class="cs-back">← All case studies</a>
+    <p class="tag on-light">Case Study</p>
+    <h1>Salty — an AI support agent built around knowledge, routing, and human handoff</h1>
+    <p class="page-sub">College of Coastal Georgia · Element451 Bolt AI · Conversational AI · Knowledge Base Architecture · Human-in-the-Loop Support</p>
+  </div>
+</header>
+
+<section class="cs-body">
+  <div class="wrap cs-wrap">
+
+    <article class="cs-section">
+      <p class="cs-eyebrow">01 · Role &amp; Context</p>
+      <p>I designed, built, and continue to operate the AI support experience behind Salty, the College of Coastal Georgia's virtual support agent in Element451 Bolt. My work covered the full support architecture around the model: knowledge design, conversational behavior, routing, verification, guided application-start workflows, escalation, human handoff, testing, and ongoing improvement.</p>
+      <p>The goal was not to replace staff. It was to make routine information available immediately, extend support beyond office hours, and make sure conversations that require a person reach the right team with enough context to continue.</p>
+    </article>
+
+    <article class="cs-section">
+      <p class="cs-eyebrow">02 · Production Impact After One Year</p>
+      <div class="metric-grid">
+        <div class="metric-card tick-frame">
+          <p class="metric-value">117,585</p>
+          <p class="metric-label">Human minutes saved · about 1,960 hours</p>
+        </div>
+        <div class="metric-card tick-frame">
+          <p class="metric-value">7,856</p>
+          <p class="metric-label">Conversations handled by the agent</p>
+        </div>
+        <div class="metric-card tick-frame">
+          <p class="metric-value">3,976</p>
+          <p class="metric-label">After-hours conversations · 50.6% of total</p>
+        </div>
+        <div class="metric-card tick-frame">
+          <p class="metric-value">117</p>
+          <p class="metric-label">Human handoffs · just 1.5% of conversations</p>
+        </div>
+      </div>
+      <p>Normal staffed hours are 8:00 AM–5:00 PM, Monday through Friday. More than half of the agent's conversations occurred outside that window, giving students, prospective students, faculty, staff, and other users a support path when offices were closed. Across all 7,856 conversations, only 117 were transferred to a human — either because the request required additional support the agent was not designed to provide or because the user directly asked to speak with someone.</p>
+    </article>
+
+    <article class="cs-section">
+      <p class="cs-eyebrow">03 · The Problem</p>
+      <p>Institutional support is fragmented by design. Admissions, registration, financial aid, Help Desk support, housing, billing, orientation, Student Handbook guidance, and other services each own different answers and different processes. Users do not necessarily know which office owns their question, and many questions arrive after the office that can answer them has closed.</p>
+      <p>A useful AI support layer therefore had to do more than generate an answer. It needed to know what information it could safely provide, what required verification or access to an individual record, when to stop, and where to send the conversation next.</p>
+    </article>
+
+    <article class="cs-section">
+      <p class="cs-eyebrow">04 · What I Built</p>
+      <ul class="cs-list">
+        <li><strong>Knowledge architecture:</strong> built and maintain the institutional knowledge base that grounds answers across admissions and prospective-student questions, Help Desk support, Student Handbook guidance, housing, student services, faculty/staff topics, and general College information.</li>
+        <li><strong>Intent and routing logic:</strong> designed conversation paths that distinguish general informational questions from requests that need a specific office, workflow, or human response.</li>
+        <li><strong>Human handoffs:</strong> configured escalation paths so conversations the agent should not resolve alone — or users who explicitly ask for a person — can be transferred to the appropriate service area. Only 117 of 7,856 first-year conversations (1.5%) used a human handoff.</li>
+        <li><strong>Verification workflows:</strong> designed identity-verification paths for situations where the next step involves information tied to an individual student or applicant.</li>
+        <li><strong>Guided application start:</strong> built a conversational path that helps prospective students begin an application to the College of Coastal Georgia, reducing friction between an information request and the next enrollment step.</li>
+        <li><strong>After-hours support:</strong> structured the experience so users can still get useful assistance when College offices are closed instead of waiting for the next business day.</li>
+        <li><strong>Testing and QA:</strong> review incorrect responses, failed escalations, routing issues, and knowledge gaps, then adjust the configuration and source material based on production behavior.</li>
+        <li><strong>Training and documentation:</strong> created guidance and support materials so staff understand how the system works, where it hands off, and how the experience should be maintained.</li>
+      </ul>
+    </article>
+
+    <article class="cs-section">
+      <p class="cs-eyebrow">05 · Human-in-the-Loop Design</p>
+      <p>The most important design decision was treating escalation as part of the product, not as failure. A student asking for a general deadline may only need a grounded answer. A student asking about their own application, account, hold, bill, or other record-specific issue may need identity verification and a staff member with access to the underlying system.</p>
+      <p>I built those boundaries into the support flow so automation handles what it is good at while staff retain control of requests that require institutional judgment, protected information, or direct record access.</p>
+    </article>
+
+    <article class="cs-section">
+      <p class="cs-eyebrow">06 · Why the Metrics Matter</p>
+      <p>The strongest signal was not simply conversation volume. It was how much support the agent could deliver without requiring a transfer, and when that support was being used. Of 7,856 conversations in the first year, only 117 were handed to human staff — about 1.5% — while 3,976 occurred after normal business hours, approximately 50.6% of all usage.</p>
+      <p>I do not treat a handoff as a failure: some requests require staff access or judgment, and some users simply prefer a person. But the fact that only 117 conversations needed or requested that path shows how much of the College's routine support demand the agent was able to absorb. Combined with 117,585 human minutes saved — roughly 1,960 hours — the result is a support layer that extends service beyond business hours while reserving staff time for the cases where human involvement adds the most value.</p>
+    </article>
+
+    <article class="cs-section">
+      <p class="cs-eyebrow">07 · Skills Demonstrated</p>
+      <div class="chips cs-chips">
+        <span class="chip">Element451 Bolt AI</span>
+        <span class="chip">Conversational AI</span>
+        <span class="chip">Knowledge Base Architecture</span>
+        <span class="chip">Intent &amp; Routing Logic</span>
+        <span class="chip">Human-in-the-Loop Workflows</span>
+        <span class="chip">Guided Application Workflows</span>
+        <span class="chip">Identity Verification Flows</span>
+        <span class="chip">Escalation Design</span>
+        <span class="chip">AI Testing &amp; QA</span>
+        <span class="chip">Requirements Gathering</span>
+        <span class="chip">Process Design</span>
+        <span class="chip">Technical Documentation</span>
+        <span class="chip">Stakeholder Collaboration</span>
+      </div>
+    </article>
+
   </div>
 </section>
 </main>
